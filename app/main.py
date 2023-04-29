@@ -1,3 +1,5 @@
+import os
+
 from antlr4 import FileStream, CommonTokenStream
 from app.grammars.LookMLLexer import LookMLLexer
 from app.grammars.LookMLParser import LookMLParser
@@ -21,11 +23,10 @@ def main(file_path: str) -> None:
 
 
 if __name__ == "__main__":
-    import os
     directory = os.path.join(os.getcwd(), 'app', 'fixtures')
     extension = '.lkml'
-    for file in os.listdir(directory):
-        if file.endswith(extension):
-            lookml_file_path = os.path.join(directory, file)
+    for f in os.listdir(directory):
+        if f.endswith(extension):
+            lookml_file_path = os.path.join(directory, f)
             print(f"Processing {lookml_file_path}")
             parse_tree = main(lookml_file_path)
