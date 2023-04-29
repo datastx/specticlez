@@ -43,7 +43,6 @@ view: order_items {
 
   measure: total_revenue {
     type: sum
-    sql: ${quantity} * ${sale_price};;
     value_format: "$0,0.00"
   }
 }
