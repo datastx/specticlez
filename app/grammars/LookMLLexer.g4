@@ -14,6 +14,7 @@ VALUE_FORMAT: 'value_format';
 // Literals
 COLON: ':';
 SEMICOLON: ';';
+DOUBLE_SEMICOLON: ';;';
 COMMA: ',';
 LPAREN: '(';
 RPAREN: ')';
@@ -25,12 +26,19 @@ RCURLY: '}';
 // Identifier
 ID: [a-zA-Z_] [a-zA-Z_0-9]*;
 
+// Schema name
+SCHEMA_NAME: ID DOT ID;
+
 // Strings
 STRING: '"' ~["\r\n]*? '"';
+// QUOTED_STRING: '\'' ~['\r\n]*? '\'';
 DOT: '.';
 
 // Expression
 EXPR: '${' (~('}') | ('}' ~('}')))* '}';
+
+// Primary key value
+YES: 'yes';
 
 // Whitespace and newline
 WS: [ \t]+ -> skip;

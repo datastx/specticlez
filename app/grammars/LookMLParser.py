@@ -10,41 +10,43 @@ else:
 
 def serializedATN():
     return [
-        4,1,24,114,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
-        6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,1,0,1,0,1,0,1,1,1,1,1,1,1,1,
-        1,1,1,1,5,1,32,8,1,10,1,12,1,35,9,1,1,1,5,1,38,8,1,10,1,12,1,41,
-        9,1,1,1,1,1,1,2,1,2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,
-        4,3,58,8,3,11,3,12,3,59,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,5,
-        1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,5,7,84,8,7,10,7,
-        12,7,87,9,7,1,7,1,7,1,7,1,8,1,8,3,8,94,8,8,1,9,1,9,1,9,1,9,1,9,1,
-        9,1,9,4,9,103,8,9,11,9,12,9,104,1,9,1,9,1,10,1,10,1,10,1,10,1,10,
-        1,10,0,0,11,0,2,4,6,8,10,12,14,16,18,20,0,0,112,0,22,1,0,0,0,2,25,
-        1,0,0,0,4,44,1,0,0,0,6,50,1,0,0,0,8,63,1,0,0,0,10,68,1,0,0,0,12,
-        74,1,0,0,0,14,79,1,0,0,0,16,91,1,0,0,0,18,95,1,0,0,0,20,108,1,0,
-        0,0,22,23,3,2,1,0,23,24,5,0,0,1,24,1,1,0,0,0,25,26,5,1,0,0,26,27,
-        5,10,0,0,27,28,5,19,0,0,28,29,5,17,0,0,29,33,3,4,2,0,30,32,3,6,3,
-        0,31,30,1,0,0,0,32,35,1,0,0,0,33,31,1,0,0,0,33,34,1,0,0,0,34,39,
-        1,0,0,0,35,33,1,0,0,0,36,38,3,18,9,0,37,36,1,0,0,0,38,41,1,0,0,0,
-        39,37,1,0,0,0,39,40,1,0,0,0,40,42,1,0,0,0,41,39,1,0,0,0,42,43,5,
-        18,0,0,43,3,1,0,0,0,44,45,5,2,0,0,45,46,5,10,0,0,46,47,5,20,0,0,
-        47,48,5,11,0,0,48,49,5,11,0,0,49,5,1,0,0,0,50,51,5,3,0,0,51,52,5,
-        10,0,0,52,53,5,19,0,0,53,57,5,17,0,0,54,58,3,8,4,0,55,58,3,10,5,
-        0,56,58,3,12,6,0,57,54,1,0,0,0,57,55,1,0,0,0,57,56,1,0,0,0,58,59,
-        1,0,0,0,59,57,1,0,0,0,59,60,1,0,0,0,60,61,1,0,0,0,61,62,5,18,0,0,
-        62,7,1,0,0,0,63,64,5,4,0,0,64,65,5,10,0,0,65,66,5,19,0,0,66,67,5,
-        11,0,0,67,9,1,0,0,0,68,69,5,5,0,0,69,70,5,10,0,0,70,71,5,22,0,0,
-        71,72,5,11,0,0,72,73,5,11,0,0,73,11,1,0,0,0,74,75,5,6,0,0,75,76,
-        5,10,0,0,76,77,5,19,0,0,77,78,5,11,0,0,78,13,1,0,0,0,79,80,5,7,0,
-        0,80,81,5,10,0,0,81,85,5,15,0,0,82,84,3,16,8,0,83,82,1,0,0,0,84,
-        87,1,0,0,0,85,83,1,0,0,0,85,86,1,0,0,0,86,88,1,0,0,0,87,85,1,0,0,
-        0,88,89,5,16,0,0,89,90,5,11,0,0,90,15,1,0,0,0,91,93,5,19,0,0,92,
-        94,5,12,0,0,93,92,1,0,0,0,93,94,1,0,0,0,94,17,1,0,0,0,95,96,5,8,
-        0,0,96,97,5,10,0,0,97,98,5,19,0,0,98,102,5,17,0,0,99,103,3,8,4,0,
-        100,103,3,10,5,0,101,103,3,20,10,0,102,99,1,0,0,0,102,100,1,0,0,
-        0,102,101,1,0,0,0,103,104,1,0,0,0,104,102,1,0,0,0,104,105,1,0,0,
-        0,105,106,1,0,0,0,106,107,5,18,0,0,107,19,1,0,0,0,108,109,5,9,0,
-        0,109,110,5,10,0,0,110,111,5,20,0,0,111,112,5,11,0,0,112,21,1,0,
-        0,0,8,33,39,57,59,85,93,102,104
+        4,1,27,119,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,1,0,1,0,
+        1,0,1,1,1,1,1,1,1,1,1,1,1,1,5,1,36,8,1,10,1,12,1,39,9,1,1,1,1,1,
+        1,2,1,2,1,2,1,2,1,2,1,3,1,3,3,3,50,8,3,1,4,1,4,1,4,1,4,1,4,1,4,1,
+        4,5,4,59,8,4,10,4,12,4,62,9,4,1,4,1,4,3,4,66,8,4,1,5,1,5,1,5,1,5,
+        1,6,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,8,1,8,1,9,1,9,1,9,1,9,5,9,
+        87,8,9,10,9,12,9,90,9,9,1,9,1,9,3,9,94,8,9,1,10,1,10,3,10,98,8,10,
+        1,11,1,11,1,11,1,11,1,11,1,11,1,11,4,11,107,8,11,11,11,12,11,108,
+        1,11,1,11,3,11,113,8,11,1,12,1,12,1,12,1,12,1,12,0,0,13,0,2,4,6,
+        8,10,12,14,16,18,20,22,24,0,0,118,0,26,1,0,0,0,2,29,1,0,0,0,4,42,
+        1,0,0,0,6,49,1,0,0,0,8,51,1,0,0,0,10,67,1,0,0,0,12,71,1,0,0,0,14,
+        76,1,0,0,0,16,80,1,0,0,0,18,82,1,0,0,0,20,95,1,0,0,0,22,99,1,0,0,
+        0,24,114,1,0,0,0,26,27,3,2,1,0,27,28,5,0,0,1,28,1,1,0,0,0,29,30,
+        5,1,0,0,30,31,5,10,0,0,31,32,5,20,0,0,32,33,5,18,0,0,33,37,3,4,2,
+        0,34,36,3,6,3,0,35,34,1,0,0,0,36,39,1,0,0,0,37,35,1,0,0,0,37,38,
+        1,0,0,0,38,40,1,0,0,0,39,37,1,0,0,0,40,41,5,19,0,0,41,3,1,0,0,0,
+        42,43,5,2,0,0,43,44,5,10,0,0,44,45,5,21,0,0,45,46,5,12,0,0,46,5,
+        1,0,0,0,47,50,3,8,4,0,48,50,3,22,11,0,49,47,1,0,0,0,49,48,1,0,0,
+        0,50,7,1,0,0,0,51,52,5,3,0,0,52,53,5,10,0,0,53,54,5,20,0,0,54,60,
+        5,18,0,0,55,59,3,10,5,0,56,59,3,12,6,0,57,59,3,14,7,0,58,55,1,0,
+        0,0,58,56,1,0,0,0,58,57,1,0,0,0,59,62,1,0,0,0,60,58,1,0,0,0,60,61,
+        1,0,0,0,61,63,1,0,0,0,62,60,1,0,0,0,63,65,5,19,0,0,64,66,5,11,0,
+        0,65,64,1,0,0,0,65,66,1,0,0,0,66,9,1,0,0,0,67,68,5,4,0,0,68,69,5,
+        10,0,0,69,70,5,20,0,0,70,11,1,0,0,0,71,72,5,5,0,0,72,73,5,10,0,0,
+        73,74,5,24,0,0,74,75,5,12,0,0,75,13,1,0,0,0,76,77,5,6,0,0,77,78,
+        5,10,0,0,78,79,3,16,8,0,79,15,1,0,0,0,80,81,5,25,0,0,81,17,1,0,0,
+        0,82,83,5,7,0,0,83,84,5,10,0,0,84,88,5,16,0,0,85,87,3,20,10,0,86,
+        85,1,0,0,0,87,90,1,0,0,0,88,86,1,0,0,0,88,89,1,0,0,0,89,91,1,0,0,
+        0,90,88,1,0,0,0,91,93,5,17,0,0,92,94,5,11,0,0,93,92,1,0,0,0,93,94,
+        1,0,0,0,94,19,1,0,0,0,95,97,5,20,0,0,96,98,5,13,0,0,97,96,1,0,0,
+        0,97,98,1,0,0,0,98,21,1,0,0,0,99,100,5,8,0,0,100,101,5,10,0,0,101,
+        102,5,20,0,0,102,106,5,18,0,0,103,107,3,10,5,0,104,107,3,12,6,0,
+        105,107,3,24,12,0,106,103,1,0,0,0,106,104,1,0,0,0,106,105,1,0,0,
+        0,107,108,1,0,0,0,108,106,1,0,0,0,108,109,1,0,0,0,109,110,1,0,0,
+        0,110,112,5,19,0,0,111,113,5,11,0,0,112,111,1,0,0,0,112,113,1,0,
+        0,0,113,23,1,0,0,0,114,115,5,9,0,0,115,116,5,10,0,0,116,117,5,22,
+        0,0,117,25,1,0,0,0,11,37,49,58,60,65,88,93,97,106,108,112
     ]
 
 class LookMLParser ( Parser ):
@@ -59,31 +61,35 @@ class LookMLParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'view'", "'sql_table_name'", "'dimension'", 
                      "'type'", "'sql'", "'primary_key'", "'timeframes'", 
-                     "'measure'", "'value_format'", "':'", "';'", "','", 
-                     "'('", "')'", "'['", "']'", "'{'", "'}'", "<INVALID>", 
-                     "<INVALID>", "'.'" ]
+                     "'measure'", "'value_format'", "':'", "';'", "';;'", 
+                     "','", "'('", "')'", "'['", "']'", "'{'", "'}'", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "'.'", "<INVALID>", "'yes'" ]
 
     symbolicNames = [ "<INVALID>", "VIEW", "SQL_TABLE_NAME", "DIMENSION", 
                       "TYPE", "SQL", "PRIMARY_KEY", "TIMEFRAMES", "MEASURE", 
-                      "VALUE_FORMAT", "COLON", "SEMICOLON", "COMMA", "LPAREN", 
-                      "RPAREN", "LBRACKET", "RBRACKET", "LCURLY", "RCURLY", 
-                      "ID", "STRING", "DOT", "EXPR", "WS", "NEWLINE" ]
+                      "VALUE_FORMAT", "COLON", "SEMICOLON", "DOUBLE_SEMICOLON", 
+                      "COMMA", "LPAREN", "RPAREN", "LBRACKET", "RBRACKET", 
+                      "LCURLY", "RCURLY", "ID", "SCHEMA_NAME", "STRING", 
+                      "DOT", "EXPR", "YES", "WS", "NEWLINE" ]
 
     RULE_lookml = 0
     RULE_view_def = 1
     RULE_sql_table_name_def = 2
-    RULE_dim_def = 3
-    RULE_type_def = 4
-    RULE_sql_def = 5
-    RULE_primary_key_def = 6
-    RULE_timeframes_def = 7
-    RULE_timeframe = 8
-    RULE_measure_def = 9
-    RULE_value_format_def = 10
+    RULE_field_def = 3
+    RULE_dim_def = 4
+    RULE_type_def = 5
+    RULE_sql_def = 6
+    RULE_primary_key_def = 7
+    RULE_primary_key_value = 8
+    RULE_timeframes_def = 9
+    RULE_timeframe = 10
+    RULE_measure_def = 11
+    RULE_value_format_def = 12
 
-    ruleNames =  [ "lookml", "view_def", "sql_table_name_def", "dim_def", 
-                   "type_def", "sql_def", "primary_key_def", "timeframes_def", 
-                   "timeframe", "measure_def", "value_format_def" ]
+    ruleNames =  [ "lookml", "view_def", "sql_table_name_def", "field_def", 
+                   "dim_def", "type_def", "sql_def", "primary_key_def", 
+                   "primary_key_value", "timeframes_def", "timeframe", "measure_def", 
+                   "value_format_def" ]
 
     EOF = Token.EOF
     VIEW=1
@@ -97,19 +103,22 @@ class LookMLParser ( Parser ):
     VALUE_FORMAT=9
     COLON=10
     SEMICOLON=11
-    COMMA=12
-    LPAREN=13
-    RPAREN=14
-    LBRACKET=15
-    RBRACKET=16
-    LCURLY=17
-    RCURLY=18
-    ID=19
-    STRING=20
-    DOT=21
-    EXPR=22
-    WS=23
-    NEWLINE=24
+    DOUBLE_SEMICOLON=12
+    COMMA=13
+    LPAREN=14
+    RPAREN=15
+    LBRACKET=16
+    RBRACKET=17
+    LCURLY=18
+    RCURLY=19
+    ID=20
+    SCHEMA_NAME=21
+    STRING=22
+    DOT=23
+    EXPR=24
+    YES=25
+    WS=26
+    NEWLINE=27
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -154,9 +163,9 @@ class LookMLParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_lookml)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 22
+            self.state = 26
             self.view_def()
-            self.state = 23
+            self.state = 27
             self.match(LookMLParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -193,18 +202,11 @@ class LookMLParser ( Parser ):
         def RCURLY(self):
             return self.getToken(LookMLParser.RCURLY, 0)
 
-        def dim_def(self, i:int=None):
+        def field_def(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(LookMLParser.Dim_defContext)
+                return self.getTypedRuleContexts(LookMLParser.Field_defContext)
             else:
-                return self.getTypedRuleContext(LookMLParser.Dim_defContext,i)
-
-
-        def measure_def(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(LookMLParser.Measure_defContext)
-            else:
-                return self.getTypedRuleContext(LookMLParser.Measure_defContext,i)
+                return self.getTypedRuleContext(LookMLParser.Field_defContext,i)
 
 
         def getRuleIndex(self):
@@ -228,37 +230,27 @@ class LookMLParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 25
-            self.match(LookMLParser.VIEW)
-            self.state = 26
-            self.match(LookMLParser.COLON)
-            self.state = 27
-            self.match(LookMLParser.ID)
-            self.state = 28
-            self.match(LookMLParser.LCURLY)
             self.state = 29
-            self.sql_table_name_def()
+            self.match(LookMLParser.VIEW)
+            self.state = 30
+            self.match(LookMLParser.COLON)
+            self.state = 31
+            self.match(LookMLParser.ID)
+            self.state = 32
+            self.match(LookMLParser.LCURLY)
             self.state = 33
+            self.sql_table_name_def()
+            self.state = 37
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==3:
-                self.state = 30
-                self.dim_def()
-                self.state = 35
+            while _la==3 or _la==8:
+                self.state = 34
+                self.field_def()
+                self.state = 39
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 39
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while _la==8:
-                self.state = 36
-                self.measure_def()
-                self.state = 41
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-
-            self.state = 42
+            self.state = 40
             self.match(LookMLParser.RCURLY)
         except RecognitionException as re:
             localctx.exception = re
@@ -282,14 +274,11 @@ class LookMLParser ( Parser ):
         def COLON(self):
             return self.getToken(LookMLParser.COLON, 0)
 
-        def STRING(self):
-            return self.getToken(LookMLParser.STRING, 0)
+        def SCHEMA_NAME(self):
+            return self.getToken(LookMLParser.SCHEMA_NAME, 0)
 
-        def SEMICOLON(self, i:int=None):
-            if i is None:
-                return self.getTokens(LookMLParser.SEMICOLON)
-            else:
-                return self.getToken(LookMLParser.SEMICOLON, i)
+        def DOUBLE_SEMICOLON(self):
+            return self.getToken(LookMLParser.DOUBLE_SEMICOLON, 0)
 
         def getRuleIndex(self):
             return LookMLParser.RULE_sql_table_name_def
@@ -311,16 +300,72 @@ class LookMLParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_sql_table_name_def)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 44
+            self.state = 42
             self.match(LookMLParser.SQL_TABLE_NAME)
-            self.state = 45
+            self.state = 43
             self.match(LookMLParser.COLON)
-            self.state = 46
-            self.match(LookMLParser.STRING)
-            self.state = 47
-            self.match(LookMLParser.SEMICOLON)
-            self.state = 48
-            self.match(LookMLParser.SEMICOLON)
+            self.state = 44
+            self.match(LookMLParser.SCHEMA_NAME)
+            self.state = 45
+            self.match(LookMLParser.DOUBLE_SEMICOLON)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Field_defContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def dim_def(self):
+            return self.getTypedRuleContext(LookMLParser.Dim_defContext,0)
+
+
+        def measure_def(self):
+            return self.getTypedRuleContext(LookMLParser.Measure_defContext,0)
+
+
+        def getRuleIndex(self):
+            return LookMLParser.RULE_field_def
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterField_def" ):
+                listener.enterField_def(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitField_def" ):
+                listener.exitField_def(self)
+
+
+
+
+    def field_def(self):
+
+        localctx = LookMLParser.Field_defContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 6, self.RULE_field_def)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 49
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [3]:
+                self.state = 47
+                self.dim_def()
+                pass
+            elif token in [8]:
+                self.state = 48
+                self.measure_def()
+                pass
+            else:
+                raise NoViableAltException(self)
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -373,6 +418,9 @@ class LookMLParser ( Parser ):
                 return self.getTypedRuleContext(LookMLParser.Primary_key_defContext,i)
 
 
+        def SEMICOLON(self):
+            return self.getToken(LookMLParser.SEMICOLON, 0)
+
         def getRuleIndex(self):
             return LookMLParser.RULE_dim_def
 
@@ -390,48 +438,54 @@ class LookMLParser ( Parser ):
     def dim_def(self):
 
         localctx = LookMLParser.Dim_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 6, self.RULE_dim_def)
+        self.enterRule(localctx, 8, self.RULE_dim_def)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 50
-            self.match(LookMLParser.DIMENSION)
             self.state = 51
-            self.match(LookMLParser.COLON)
+            self.match(LookMLParser.DIMENSION)
             self.state = 52
-            self.match(LookMLParser.ID)
+            self.match(LookMLParser.COLON)
             self.state = 53
+            self.match(LookMLParser.ID)
+            self.state = 54
             self.match(LookMLParser.LCURLY)
-            self.state = 57 
+            self.state = 60
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while True:
-                self.state = 57
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & 112) != 0):
+                self.state = 58
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [4]:
-                    self.state = 54
+                    self.state = 55
                     self.type_def()
                     pass
                 elif token in [5]:
-                    self.state = 55
+                    self.state = 56
                     self.sql_def()
                     pass
                 elif token in [6]:
-                    self.state = 56
+                    self.state = 57
                     self.primary_key_def()
                     pass
                 else:
                     raise NoViableAltException(self)
 
-                self.state = 59 
+                self.state = 62
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 112) != 0)):
-                    break
 
-            self.state = 61
+            self.state = 63
             self.match(LookMLParser.RCURLY)
+            self.state = 65
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==11:
+                self.state = 64
+                self.match(LookMLParser.SEMICOLON)
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -457,9 +511,6 @@ class LookMLParser ( Parser ):
         def ID(self):
             return self.getToken(LookMLParser.ID, 0)
 
-        def SEMICOLON(self):
-            return self.getToken(LookMLParser.SEMICOLON, 0)
-
         def getRuleIndex(self):
             return LookMLParser.RULE_type_def
 
@@ -477,17 +528,15 @@ class LookMLParser ( Parser ):
     def type_def(self):
 
         localctx = LookMLParser.Type_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 8, self.RULE_type_def)
+        self.enterRule(localctx, 10, self.RULE_type_def)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 63
+            self.state = 67
             self.match(LookMLParser.TYPE)
-            self.state = 64
+            self.state = 68
             self.match(LookMLParser.COLON)
-            self.state = 65
+            self.state = 69
             self.match(LookMLParser.ID)
-            self.state = 66
-            self.match(LookMLParser.SEMICOLON)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -513,11 +562,8 @@ class LookMLParser ( Parser ):
         def EXPR(self):
             return self.getToken(LookMLParser.EXPR, 0)
 
-        def SEMICOLON(self, i:int=None):
-            if i is None:
-                return self.getTokens(LookMLParser.SEMICOLON)
-            else:
-                return self.getToken(LookMLParser.SEMICOLON, i)
+        def DOUBLE_SEMICOLON(self):
+            return self.getToken(LookMLParser.DOUBLE_SEMICOLON, 0)
 
         def getRuleIndex(self):
             return LookMLParser.RULE_sql_def
@@ -536,19 +582,17 @@ class LookMLParser ( Parser ):
     def sql_def(self):
 
         localctx = LookMLParser.Sql_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 10, self.RULE_sql_def)
+        self.enterRule(localctx, 12, self.RULE_sql_def)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 68
-            self.match(LookMLParser.SQL)
-            self.state = 69
-            self.match(LookMLParser.COLON)
-            self.state = 70
-            self.match(LookMLParser.EXPR)
             self.state = 71
-            self.match(LookMLParser.SEMICOLON)
+            self.match(LookMLParser.SQL)
             self.state = 72
-            self.match(LookMLParser.SEMICOLON)
+            self.match(LookMLParser.COLON)
+            self.state = 73
+            self.match(LookMLParser.EXPR)
+            self.state = 74
+            self.match(LookMLParser.DOUBLE_SEMICOLON)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -571,11 +615,9 @@ class LookMLParser ( Parser ):
         def COLON(self):
             return self.getToken(LookMLParser.COLON, 0)
 
-        def ID(self):
-            return self.getToken(LookMLParser.ID, 0)
+        def primary_key_value(self):
+            return self.getTypedRuleContext(LookMLParser.Primary_key_valueContext,0)
 
-        def SEMICOLON(self):
-            return self.getToken(LookMLParser.SEMICOLON, 0)
 
         def getRuleIndex(self):
             return LookMLParser.RULE_primary_key_def
@@ -594,17 +636,56 @@ class LookMLParser ( Parser ):
     def primary_key_def(self):
 
         localctx = LookMLParser.Primary_key_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_primary_key_def)
+        self.enterRule(localctx, 14, self.RULE_primary_key_def)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 74
-            self.match(LookMLParser.PRIMARY_KEY)
-            self.state = 75
-            self.match(LookMLParser.COLON)
             self.state = 76
-            self.match(LookMLParser.ID)
+            self.match(LookMLParser.PRIMARY_KEY)
             self.state = 77
-            self.match(LookMLParser.SEMICOLON)
+            self.match(LookMLParser.COLON)
+            self.state = 78
+            self.primary_key_value()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Primary_key_valueContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def YES(self):
+            return self.getToken(LookMLParser.YES, 0)
+
+        def getRuleIndex(self):
+            return LookMLParser.RULE_primary_key_value
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPrimary_key_value" ):
+                listener.enterPrimary_key_value(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPrimary_key_value" ):
+                listener.exitPrimary_key_value(self)
+
+
+
+
+    def primary_key_value(self):
+
+        localctx = LookMLParser.Primary_key_valueContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 16, self.RULE_primary_key_value)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 80
+            self.match(LookMLParser.YES)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -633,15 +714,15 @@ class LookMLParser ( Parser ):
         def RBRACKET(self):
             return self.getToken(LookMLParser.RBRACKET, 0)
 
-        def SEMICOLON(self):
-            return self.getToken(LookMLParser.SEMICOLON, 0)
-
         def timeframe(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(LookMLParser.TimeframeContext)
             else:
                 return self.getTypedRuleContext(LookMLParser.TimeframeContext,i)
 
+
+        def SEMICOLON(self):
+            return self.getToken(LookMLParser.SEMICOLON, 0)
 
         def getRuleIndex(self):
             return LookMLParser.RULE_timeframes_def
@@ -660,30 +741,36 @@ class LookMLParser ( Parser ):
     def timeframes_def(self):
 
         localctx = LookMLParser.Timeframes_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_timeframes_def)
+        self.enterRule(localctx, 18, self.RULE_timeframes_def)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 79
+            self.state = 82
             self.match(LookMLParser.TIMEFRAMES)
-            self.state = 80
+            self.state = 83
             self.match(LookMLParser.COLON)
-            self.state = 81
+            self.state = 84
             self.match(LookMLParser.LBRACKET)
-            self.state = 85
+            self.state = 88
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==19:
-                self.state = 82
+            while _la==20:
+                self.state = 85
                 self.timeframe()
-                self.state = 87
+                self.state = 90
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 88
+            self.state = 91
             self.match(LookMLParser.RBRACKET)
-            self.state = 89
-            self.match(LookMLParser.SEMICOLON)
+            self.state = 93
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==11:
+                self.state = 92
+                self.match(LookMLParser.SEMICOLON)
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -723,17 +810,17 @@ class LookMLParser ( Parser ):
     def timeframe(self):
 
         localctx = LookMLParser.TimeframeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_timeframe)
+        self.enterRule(localctx, 20, self.RULE_timeframe)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 91
+            self.state = 95
             self.match(LookMLParser.ID)
-            self.state = 93
+            self.state = 97
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==12:
-                self.state = 92
+            if _la==13:
+                self.state = 96
                 self.match(LookMLParser.COMMA)
 
 
@@ -789,6 +876,9 @@ class LookMLParser ( Parser ):
                 return self.getTypedRuleContext(LookMLParser.Value_format_defContext,i)
 
 
+        def SEMICOLON(self):
+            return self.getToken(LookMLParser.SEMICOLON, 0)
+
         def getRuleIndex(self):
             return LookMLParser.RULE_measure_def
 
@@ -806,48 +896,56 @@ class LookMLParser ( Parser ):
     def measure_def(self):
 
         localctx = LookMLParser.Measure_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_measure_def)
+        self.enterRule(localctx, 22, self.RULE_measure_def)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 95
+            self.state = 99
             self.match(LookMLParser.MEASURE)
-            self.state = 96
+            self.state = 100
             self.match(LookMLParser.COLON)
-            self.state = 97
+            self.state = 101
             self.match(LookMLParser.ID)
-            self.state = 98
+            self.state = 102
             self.match(LookMLParser.LCURLY)
-            self.state = 102 
+            self.state = 106 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 102
+                self.state = 106
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [4]:
-                    self.state = 99
+                    self.state = 103
                     self.type_def()
                     pass
                 elif token in [5]:
-                    self.state = 100
+                    self.state = 104
                     self.sql_def()
                     pass
                 elif token in [9]:
-                    self.state = 101
+                    self.state = 105
                     self.value_format_def()
                     pass
                 else:
                     raise NoViableAltException(self)
 
-                self.state = 104 
+                self.state = 108 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 560) != 0)):
                     break
 
-            self.state = 106
+            self.state = 110
             self.match(LookMLParser.RCURLY)
+            self.state = 112
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==11:
+                self.state = 111
+                self.match(LookMLParser.SEMICOLON)
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -873,9 +971,6 @@ class LookMLParser ( Parser ):
         def STRING(self):
             return self.getToken(LookMLParser.STRING, 0)
 
-        def SEMICOLON(self):
-            return self.getToken(LookMLParser.SEMICOLON, 0)
-
         def getRuleIndex(self):
             return LookMLParser.RULE_value_format_def
 
@@ -893,17 +988,15 @@ class LookMLParser ( Parser ):
     def value_format_def(self):
 
         localctx = LookMLParser.Value_format_defContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_value_format_def)
+        self.enterRule(localctx, 24, self.RULE_value_format_def)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 108
+            self.state = 114
             self.match(LookMLParser.VALUE_FORMAT)
-            self.state = 109
+            self.state = 115
             self.match(LookMLParser.COLON)
-            self.state = 110
+            self.state = 116
             self.match(LookMLParser.STRING)
-            self.state = 111
-            self.match(LookMLParser.SEMICOLON)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

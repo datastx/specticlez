@@ -35,6 +35,15 @@ class LookMLParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LookMLParser#field_def.
+    def enterField_def(self, ctx:LookMLParser.Field_defContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#field_def.
+    def exitField_def(self, ctx:LookMLParser.Field_defContext):
+        pass
+
+
     # Enter a parse tree produced by LookMLParser#dim_def.
     def enterDim_def(self, ctx:LookMLParser.Dim_defContext):
         pass
@@ -68,6 +77,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#primary_key_def.
     def exitPrimary_key_def(self, ctx:LookMLParser.Primary_key_defContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#primary_key_value.
+    def enterPrimary_key_value(self, ctx:LookMLParser.Primary_key_valueContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#primary_key_value.
+    def exitPrimary_key_value(self, ctx:LookMLParser.Primary_key_valueContext):
         pass
 
 

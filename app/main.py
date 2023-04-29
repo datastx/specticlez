@@ -1,5 +1,5 @@
+import glob
 
-import sys
 from antlr4 import FileStream, CommonTokenStream
 from app.grammars.LookMLLexer import LookMLLexer
 from app.grammars.LookMLParser import LookMLParser
@@ -24,5 +24,11 @@ def parse_lookml_file(file_path):
 
 
 if __name__ == "__main__":
-    lookml_file_path = "/Users/brianmoore/githib.com/datastx/specticlez/app/fixtures/lookml_test.view.lkml"
-    parse_tree = parse_lookml_file(lookml_file_path)
+    directory = '/Users/brianmoore/githib.com/datastx/specticlez/app/fixtures/'
+    extension = '.lkml'
+    import os
+    for file in os.listdir(directory):
+        if file.endswith(extension):
+            lookml_file_path = os.path.join(directory, file)
+            print(f"Processing {lookml_file_path}")
+            parse_tree = parse_lookml_file(lookml_file_path)
