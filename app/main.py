@@ -21,9 +21,9 @@ def main(file_path: str) -> None:
 
 
 if __name__ == "__main__":
-    directory = '/Users/brianmoore/githib.com/datastx/specticlez/app/fixtures/'
-    extension = '.lkml'
     import os
+    directory = os.path.join(os.getcwd(), 'app', 'fixtures')
+    extension = '.lkml'
     for file in os.listdir(directory):
         if file.endswith(extension):
             lookml_file_path = os.path.join(directory, file)
