@@ -4,8 +4,6 @@ options { tokenVocab=LookMLLexer; }
 
 lookml_file: (model | view | explore)* EOF;
 
-// lookml_file: (view )* EOF;
-
 model: MODEL COLON IDENTIFIER LBRACE model_property* RBRACE;
 view: VIEW COLON IDENTIFIER LBRACE view_property* RBRACE;
 explore: EXPLORE COLON IDENTIFIER LBRACE explore_property* RBRACE;

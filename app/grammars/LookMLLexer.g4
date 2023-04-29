@@ -36,7 +36,7 @@ DOT: '.';
 EQ: '=';
 PIPE: '|';
 
-IDENTIFIER: [a-zA-Z_] [a-zA-Z_0-9-]*; // Allow hyphenated names
+IDENTIFIER: [a-zA-Z_] [a-zA-Z_0-9-.]*; // Allow hyphenated names
 NUMBER: [0-9]+ ('.' [0-9]+)?;
 STRING: '"' (~["\r\n\t])* '"';
 DOLLAR: '$';
