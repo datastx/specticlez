@@ -18,7 +18,7 @@ class CustomErrorListener(ErrorListener):
         column: int,
         msg: str,
         e: Any,
-    ) -> None:
+    ) -> SyntaxError:
         """
         Raise a SyntaxError when a syntax error is detected in the input stream.
 
