@@ -2,7 +2,7 @@
 FROM openjdk:11-jdk
 
 # Define a build argument with a default value
-ARG ANTLR_VERSION=4.12.0
+ARG ANTLR_VERSION=
 
 # Install Python runtime and ANTLR4
 RUN apt-get update && \
