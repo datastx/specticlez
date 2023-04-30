@@ -1,6 +1,6 @@
 import os
 import sys
-from typing import Any, List
+from typing import Any
 
 from antlr4 import FileStream, CommonTokenStream, Parser, Token
 from antlr4.error.ErrorListener import ErrorListener
@@ -32,7 +32,7 @@ class CustomErrorListener(ErrorListener):
             msg (str): The error message.
             e (Any): The RecognitionException instance if available, otherwise None.
         """
-        raise SyntaxError(f"Error at line {line}, column {column}: {msg}")
+        raise SyntaxError(f"Error at line {line}, column {column}: {msg}.\n recognizer: {recognizer} and offendingSymbol: {offendingSymbol}\n {e}")
 
 
 class ParsingError(Exception):
