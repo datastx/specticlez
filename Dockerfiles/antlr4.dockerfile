@@ -1,7 +1,7 @@
 # Use the official openjdk image as the base
 FROM openjdk:11-jdk
 
-# Define a build argument with a default value
+# Define a build argument. We want this to fail if not specified
 ARG ANTLR_VERSION=
 
 # Install Python runtime and ANTLR4
