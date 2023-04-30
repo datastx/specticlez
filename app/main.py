@@ -1,9 +1,10 @@
 import os
 import sys
-from typing import Any
+from typing import Any, List
 
 from antlr4 import FileStream, CommonTokenStream, Parser, Token
 from antlr4.error.ErrorListener import ErrorListener
+from antlr4.tree.Tree import ParseTree
 from app.grammars.LookMLLexer import LookMLLexer
 from app.grammars.LookMLParser import LookMLParser
 
@@ -56,7 +57,7 @@ def main(file_path: str) -> None:
     parser.addErrorListener(CustomErrorListener())
 
     try:
-        tree = parser.lookml_file()
+        tree: ParseTree = parser.lookml_file()
         print(tree.toStringTree(recog=parser))
     except SyntaxError as e:
         print(f"Error parsing {file_path}: {e}")
@@ -64,13 +65,13 @@ def main(file_path: str) -> None:
 
 
 if __name__ == "__main__":
-    directory = os.path.join(os.getcwd(), 'app', 'fixtures')
-    extension = '.lkml'
+    directory: str = os.path.join(os.getcwd(), 'app', 'fixtures')
+    extension: str = '.lkml'
     for f in os.listdir(directory):
         if f.endswith(extension):
-            lookml_file_path = os.path.join(directory, f)
+            lookml_file_path: str = os.path.join(directory, f)
             print(f"Processing {lookml_file_path}")
             try:
-                parse_tree = main(lookml_file_path)
+                parse_tree: None = main(lookml_file_path)
             except ParsingError:
                 sys.exit(1)
