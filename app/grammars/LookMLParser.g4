@@ -10,9 +10,11 @@ explore: EXPLORE COLON IDENTIFIER LBRACE explore_property* RBRACE;
 
 model_property: (join | derived_table);
 view_property: (sql_table_name_property | dimension | dimension_group | measure | filter | parameter);
-explore_property: (join | derived_table | relationship | link);
+explore_property: explore_view_name (join | derived_table | relationship | link);
 
 sql_table_name_property: SQL_TABLE_NAME COLON IDENTIFIER (DOT IDENTIFIER)? SEMI SEMI;
+
+explore_view_name: VIEW_NAME COLON IDENTIFIER;
 
 join: JOIN IDENTIFIER LBRACE join_property* RBRACE;
 derived_table: DERIVED_TABLE LBRACE derived_table_property* RBRACE;

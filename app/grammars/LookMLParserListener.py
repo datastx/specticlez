@@ -80,6 +80,15 @@ class LookMLParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LookMLParser#explore_view_name.
+    def enterExplore_view_name(self, ctx:LookMLParser.Explore_view_nameContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#explore_view_name.
+    def exitExplore_view_name(self, ctx:LookMLParser.Explore_view_nameContext):
+        pass
+
+
     # Enter a parse tree produced by LookMLParser#join.
     def enterJoin(self, ctx:LookMLParser.JoinContext):
         pass

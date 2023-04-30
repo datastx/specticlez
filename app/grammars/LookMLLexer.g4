@@ -3,6 +3,7 @@ lexer grammar LookMLLexer;
 LOOKER: 'looker';
 MODEL: 'model';
 VIEW: 'view';
+VIEW_NAME: 'view_name';
 DIMENSION: 'dimension';
 DIMENSION_GROUP: 'dimension_group';
 MEASURE: 'measure';
