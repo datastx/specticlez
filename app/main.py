@@ -1,8 +1,19 @@
 import os
+import sys
 
 from antlr4 import FileStream, CommonTokenStream
+from antlr4.error.ErrorListener import ErrorListener
 from app.grammars.LookMLLexer import LookMLLexer
 from app.grammars.LookMLParser import LookMLParser
+
+
+class CustomErrorListener(ErrorListener):
+    def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
+        raise SyntaxError(f"Error at line {line}, column {column}: {msg}")
+
+
+class ParsingError(Exception):
+    pass
 
 
 def main(file_path: str) -> None:
@@ -18,8 +29,16 @@ def main(file_path: str) -> None:
     token_stream = CommonTokenStream(lexer)
     parser = LookMLParser(token_stream)
 
-    tree = parser.lookml_file()
-    print(tree.toStringTree(recog=parser))
+    # Add the custom error listener
+    parser.removeErrorListeners()
+    parser.addErrorListener(CustomErrorListener())
+
+    try:
+        tree = parser.lookml_file()
+        print(tree.toStringTree(recog=parser))
+    except SyntaxError as e:
+        print(f"Error parsing {file_path}: {e}")
+        raise ParsingError("Parsing failed") from e
 
 
 if __name__ == "__main__":
@@ -29,4 +48,7 @@ if __name__ == "__main__":
         if f.endswith(extension):
             lookml_file_path = os.path.join(directory, f)
             print(f"Processing {lookml_file_path}")
-            parse_tree = main(lookml_file_path)
+            try:
+                parse_tree = main(lookml_file_path)
+            except ParsingError:
+                sys.exit(1)
