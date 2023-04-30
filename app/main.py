@@ -7,8 +7,6 @@ from antlr4.error.ErrorListener import ErrorListener
 from antlr4.tree.Tree import ParseTree
 from app.grammars.LookMLLexer import LookMLLexer
 from app.grammars.LookMLParser import LookMLParser
-
-
 class CustomErrorListener(ErrorListener):
     """Custom error listener that raises a SyntaxError when a syntax error is detected."""
 
@@ -32,8 +30,14 @@ class CustomErrorListener(ErrorListener):
             msg (str): The error message.
             e (Any): The RecognitionException instance if available, otherwise None.
         """
-        raise SyntaxError(f"Error at line {line}, column {column}: {msg}.\n recognizer: {recognizer} and offendingSymbol: {offendingSymbol}\n {e}")
-
+        error_message = (
+            f"Syntax error detected at line {line}, column {column}:\n"
+            f"  {msg}\n"
+            f"Parser instance: {recognizer}\n"
+            f"Offending token: {offendingSymbol}\n"
+            f"RecognitionException (if any): {e}"
+        )
+        raise SyntaxError(error_message)
 
 class ParsingError(Exception):
     """Custom exception class for parsing errors."""
