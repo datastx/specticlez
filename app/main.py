@@ -1,30 +1,52 @@
 import os
 import sys
+from typing import Any
 
-from antlr4 import FileStream, CommonTokenStream
+from antlr4 import FileStream, CommonTokenStream, Parser, Token
 from antlr4.error.ErrorListener import ErrorListener
 from app.grammars.LookMLLexer import LookMLLexer
 from app.grammars.LookMLParser import LookMLParser
 
 
 class CustomErrorListener(ErrorListener):
-    def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
+    """Custom error listener that raises a SyntaxError when a syntax error is detected."""
+
+    def syntaxError(
+        self,
+        recognizer: Parser,
+        offendingSymbol: Token,
+        line: int,
+        column: int,
+        msg: str,
+        e: Any,
+    ) -> None:
+        """
+        Raise a SyntaxError when a syntax error is detected in the input stream.
+
+        Args:
+            recognizer (Parser): The parser instance.
+            offendingSymbol (Token): The offending token in the input stream.
+            line (int): The line number where the error occurred.
+            column (int): The column number where the error occurred.
+            msg (str): The error message.
+            e (Any): The RecognitionException instance if available, otherwise None.
+        """
         raise SyntaxError(f"Error at line {line}, column {column}: {msg}")
 
 
 class ParsingError(Exception):
-    pass
+    """Custom exception class for parsing errors."""
 
 
 def main(file_path: str) -> None:
-    """Parse a LookML file and print the parse tree.
+    """
+    Parse a LookML file and print the parse tree.
 
     Args:
-        file_path (str): fully qualified path to a LookML file
+        file_path (str): Fully qualified path to a LookML file.
     """
-    
     input_stream = FileStream(file_path)
-    
+
     lexer = LookMLLexer(input_stream)
     token_stream = CommonTokenStream(lexer)
     parser = LookMLParser(token_stream)
