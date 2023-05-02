@@ -1,81 +1,61 @@
-import os
-import sys
-from typing import Any
+#!/usr/bin/env python3
 
-from antlr4 import FileStream, CommonTokenStream, Parser, Token
-from antlr4.error.ErrorListener import ErrorListener
-from antlr4.tree.Tree import ParseTree
-from app.grammars.LookMLLexer import LookMLLexer
-from app.grammars.LookMLParser import LookMLParser
-class CustomErrorListener(ErrorListener):
-    """Custom error listener that raises a SyntaxError when a syntax error is detected."""
+import argparse
+from dataclasses import dataclass, field
+from typing import List, Optional
+from app.application_logger import setup_logger
+import logging
 
-    def syntaxError(
-        self,
-        recognizer: Parser,
-        offendingSymbol: Token,
-        line: int,
-        column: int,
-        msg: str,
-        e: Any,
-    ) -> SyntaxError:
-        """
-        Raise a SyntaxError when a syntax error is detected in the input stream.
+logger = None  # Declare a global logger variable
 
-        Args:
-            recognizer (Parser): The parser instance.
-            offendingSymbol (Token): The offending token in the input stream.
-            line (int): The line number where the error occurred.
-            column (int): The column number where the error occurred.
-            msg (str): The error message.
-            e (Any): The RecognitionException instance if available, otherwise None.
-        """
-        error_message = (
-            f"Syntax error detected at line {line}, column {column}:\n"
-            f"  {msg}\n"
-            f"Parser instance: {recognizer}\n"
-            f"Offending token: {offendingSymbol}\n"
-            f"RecognitionException (if any): {e}"
-        )
-        raise SyntaxError(error_message)
+@dataclass(frozen=True)
+class CLIArgs:
+    files: List[str] = field(init=True, repr=True, hash=None)
+    config: str = field(init=True, repr=True, hash=None)
+    logs: Optional[str] = field(init=True, repr=True, hash=None)
 
-class ParsingError(Exception):
-    """Custom exception class for parsing errors."""
+def process_files(file_list: List[str], config_file: str) -> None:
+    global logger  # Access the global logger variable
 
+    logger.info(f'Using config file: {config_file}')
+    for file in file_list:
+        # Process each file (e.g., read, modify, or print its content)
+        logger.info(f'Processing file: {file}')
 
-def main(file_path: str) -> None:
-    """
-    Parse a LookML file and print the parse tree.
+def parse_cli_args() -> CLIArgs:
+    parser = argparse.ArgumentParser(description='A CLI tool to process files.')
 
-    Args:
-        file_path (str): Fully qualified path to a LookML file.
-    """
-    input_stream = FileStream(file_path)
+    parser.add_argument(
+        '-f', '--files',
+        nargs='+',
+        required=True,
+        help='A string or a list of strings representing file names'
+    )
 
-    lexer = LookMLLexer(input_stream)
-    token_stream = CommonTokenStream(lexer)
-    parser = LookMLParser(token_stream)
+    parser.add_argument(
+        '-c', '--config',
+        type=str,
+        required=True,
+        help='A string representing the configuration file'
+    )
 
-    # Add the custom error listener
-    parser.removeErrorListeners()
-    parser.addErrorListener(CustomErrorListener())
+    parser.add_argument(
+        '-l', '--logs',
+        type=str,
+        choices=['json'],
+        help='Output logs in JSON format'
+    )
 
-    try:
-        tree: ParseTree = parser.lookml_file()
-        print(tree.toStringTree(recog=parser))
-    except SyntaxError as e:
-        print(f"Error parsing {file_path}: {e}")
-        raise ParsingError("Parsing failed") from e
+    args = parser.parse_args()
 
+    return CLIArgs(files=args.files, config=args.config, logs=args.logs)
 
-if __name__ == "__main__":
-    directory: str = os.path.join(os.getcwd(), 'app', 'fixtures')
-    extension: str = '.lkml'
-    for f in os.listdir(directory):
-        if f.endswith(extension):
-            lookml_file_path: str = os.path.join(directory, f)
-            print(f"Processing {lookml_file_path}")
-            try:
-                parse_tree: None = main(lookml_file_path)
-            except ParsingError:
-                sys.exit(1)
+def main() -> None:
+    global logger  # Access the global logger variable
+
+    cli_args = parse_cli_args()
+    logger = setup_logger(cli_args.logs)  # Assign the global logger variable
+    process_files(cli_args.files, cli_args.config)
+
+if __name__ == '__main__':
+    main()
