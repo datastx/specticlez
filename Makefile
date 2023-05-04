@@ -24,9 +24,9 @@ run: antlr-compile venv
 cli: venv
 	env PYTHONPATH="$(PYTHONPATH):$(CURRENT_DIR)/app" $(VENV)/python $(CURRENT_DIR)/app/main.py -f test.txt -c here -l json
 
-.PHONY: test
 test: venv
-	env PYTHONPATH="$(PYTHONPATH):$(CURRENT_DIR)/app" $(VENV)/python -m unittest test/app/engine/test_tree.py
+	export PYTHONPATH=$(CURRENT_DIR)/app:$$PYTHONPATH; $(VENV)/pytest 
+
 
 # New target to rebuild the virtual environment
 .PHONY: rebuild-venv
