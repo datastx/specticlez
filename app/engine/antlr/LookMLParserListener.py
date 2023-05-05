@@ -242,6 +242,15 @@ class LookMLParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LookMLParser#sql_on_property.
+    def enterSql_on_property(self, ctx:LookMLParser.Sql_on_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#sql_on_property.
+    def exitSql_on_property(self, ctx:LookMLParser.Sql_on_propertyContext):
+        pass
+
+
     # Enter a parse tree produced by LookMLParser#primary_key_property.
     def enterPrimary_key_property(self, ctx:LookMLParser.Primary_key_propertyContext):
         pass
