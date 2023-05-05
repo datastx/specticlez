@@ -24,8 +24,8 @@ run: antlr-compile venv
 cli: venv
 	env PYTHONPATH="$(PYTHONPATH):$(CURRENT_DIR)/app" $(VENV)/python $(CURRENT_DIR)/app/main.py -f test.txt -c here -l json
 
-test: venv
-	export PYTHONPATH=$(CURRENT_DIR)/app:$$PYTHONPATH; $(VENV)/pytest 
+test: venv antlr-compile
+	export PYTHONPATH=$(CURRENT_DIR)/app:$$PYTHONPATH; $(VENV)/pytest -v --tb=long
 
 
 # New target to rebuild the virtual environment

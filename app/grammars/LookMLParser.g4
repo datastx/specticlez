@@ -14,12 +14,12 @@ explore_property: (join | derived_table | relationship | link);
 
 sql_table_name_property: SQL_TABLE_NAME COLON IDENTIFIER (DOT IDENTIFIER)? SEMI SEMI;
 
-join: JOIN IDENTIFIER LBRACE join_property* RBRACE;
+join: JOIN COLON IDENTIFIER LBRACE join_property* RBRACE;
 derived_table: DERIVED_TABLE LBRACE derived_table_property* RBRACE;
 relationship: RELATIONSHIP COLON IDENTIFIER;
 link: LINK COLON STRING;
 
-join_property: SQL COLON STRING;
+join_property: (sql_on_property | relationship);
 derived_table_property: SQL COLON STRING;
 
 dimension: DIMENSION COLON IDENTIFIER LBRACE dimension_property* RBRACE;
@@ -36,6 +36,7 @@ parameter_property: (type_property | sql_property | allowed_value_property);
 
 type_property: TYPE COLON IDENTIFIER;
 sql_property: SQL COLON DOLLAR LBRACE IDENTIFIER RBRACE DOT IDENTIFIER SEMI SEMI;
+sql_on_property: SQL_ON COLON DOLLAR LBRACE IDENTIFIER RBRACE EQ DOLLAR LBRACE IDENTIFIER RBRACE SEMI SEMI;
 primary_key_property: PRIMARY_KEY COLON IDENTIFIER;
 allowed_value_property: ALLOWED_VALUES COLON allowed_value_list;
 timeframes_property: TIMEFRAMES COLON LBRACKET timeframe_list RBRACKET;
@@ -43,3 +44,6 @@ value_format_property: VALUE_FORMAT COLON STRING;
 
 allowed_value_list: LPAREN (STRING (COMMA STRING)*)? RPAREN;
 timeframe_list: (IDENTIFIER (COMMA IDENTIFIER)*)?;
+
+
+

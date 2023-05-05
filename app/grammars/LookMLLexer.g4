@@ -11,6 +11,7 @@ PARAMETER: 'parameter';
 EXPLORE: 'explore';
 JOIN: 'join';
 SQL: 'sql';
+SQL_ON: 'sql_on';
 ALIAS: 'alias';
 TYPE: 'type';
 PRIMARY_KEY: 'primary_key';

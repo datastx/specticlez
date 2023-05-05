@@ -11,7 +11,7 @@ from app.engine.tree import build_ast
 
 def get_lookml_files() ->List[str]:
     files = []
-    directory = os.path.join(os.getcwd(), 'test', 'fixtures')
+    directory = os.path.join(os.getcwd(), 'tests', 'fixtures')
     extension = '.lkml'
 
     for f in os.listdir(directory):
@@ -30,5 +30,5 @@ def test_build_ast(input_file):
     # Call build_ast and check if it raises any errors
     try:
         build_ast(input_file)
-    except Exception as e:
+    except ParsingError as e:
         pytest.fail(f"build_ast raised an error: {e}")
