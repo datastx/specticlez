@@ -6,8 +6,6 @@ FILE_DROP=../engine/antlr/
 # Include the venv Makefile
 include Makefile.venv
 
-# Build targets
-
 .PHONY: antlr-build
 antlr-build:
 	docker build -t $(ANTLR_IMAGE_NAME) --build-arg ANTLR_VERSION=$(ANTLR_VER) -f Dockerfiles/antlr4.dockerfile .
