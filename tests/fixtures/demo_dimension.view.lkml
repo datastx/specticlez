@@ -112,11 +112,6 @@ view: view_name_for_use {
     sql_start: SQL expression indicating the start time of a duration ;;
     start_location_field: dimension_name
     tiers: [N, N]
-    type: dimension_field_type # For a dimension field
-    type: dimension_group_type # For a dimension_group field
-    type: measure_field_type   # For a measure field
-    type: filter_field_type    # For a filter field
-    type: parameter_field_type # For a parameter field
     string_datatype: unicode # For a dimension field
     units: feet # feet | kilometers | meters | miles | nautical_miles | yards
     value_format: "excel-style formatting string"
