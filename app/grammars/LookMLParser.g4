@@ -3,22 +3,31 @@ parser grammar LookMLParser;
 options { tokenVocab=LookMLLexer; }
 
 // LookML file block structure
-lookml_file: (explore_block | model_block | view_block)* EOF;
+lookml_file: (explore_block | include_property | model_block | test_block | view_block)* EOF;
 
 // Main blocks
 explore_block: EXPLORE COLON IDENTIFIER LBRACE explore_properties* RBRACE;
 model_block: MODEL COLON IDENTIFIER LBRACE model_properties* RBRACE;
+test_block: TEST COLON IDENTIFIER LBRACE test_properties* RBRACE;
 view_block: VIEW COLON IDENTIFIER LBRACE view_properties* RBRACE;
 
-// Sub blocks based on main blocks
+// Sub blocks based on main or sub blocks
 access_filter_block: ACCESS_FILTER COLON LBRACE access_filter_properties* RBRACE;
+action_block: ACTION COLON LBRACE action_properties* RBRACE;
+action_param_block: PARAM COLON LBRACE action_param_properties* RBRACE;
+action_form_block: FORM_PARAM COLON LBRACE action_form_param_properties* RBRACE;
+action_form_param_option_block: OPTION COLON LBRACE action_form_option_properties* RBRACE;
+action_user_attribute_param_block: USER_ATTRIBUTE_PARAM COLON LBRACE action_user_attribute_param_properties* RBRACE;
 aggregate_table_block: AGGREGATE_TABLE COLON IDENTIFIER LBRACE aggregate_table_properties* RBRACE;
 aggregate_table_materilization_block: MATERIALIZATION COLON LBRACE aggregate_table_materilization_properties* RBRACE;
 aggregate_table_query_block: QUERY COLON LBRACE aggregate_table_query_properties* RBRACE;
 always_filter_block: ALWAYS_FILTER COLON LBRACE always_filter_properties* RBRACE;
+assert_block: ASSERT COLON IDENTIFIER LBRACE assert_properties* RBRACE;
+column_block: COLUMN COLON IDENTIFIER LBRACE column_properties* RBRACE;
 conditionally_filter_block: CONDITIONALLY_FILTER COLON LBRACE conditionally_filter_properties* RBRACE;
 dimension_block: DIMENSION COLON IDENTIFIER LBRACE dimension_properties* RBRACE;
 dimension_group_block: DIMENSION_GROUP COLON IDENTIFIER LBRACE dimension_group_properties* RBRACE;
+explore_source_block: EXPLORE_SOURCE COLON IDENTIFIER LBRACE explore_source_properties* RBRACE;
 filter_block: FILTER COLON IDENTIFIER LBRACE filter_properties* RBRACE;
 join_block: JOIN COLON IDENTIFIER LBRACE join_properties* RBRACE;
 measure_block: MEASURE COLON IDENTIFIER LBRACE measure_properties* RBRACE;
@@ -27,21 +36,30 @@ query_block: QUERY COLON IDENTIFIER LBRACE query_properties* RBRACE;
 
 // Properties
 access_filter_properties: (field_property | user_attribute_property);
+action_properties: (action_user_attribute_param_block |  action_param_block | action_form_block | label_property | form_url_property | icon_url_property | url_property);
+action_form_param_properties: (description_property | default_property | required_property | name_property | action_form_param_option_block | type_action_form_param_property | label_property);
+action_param_properties: (name_property | value_property);
+action_form_option_properties: (name_property | label_property);
+action_user_attribute_param_properties: ( user_attribute_property | name_property);
 aggregate_table_properties: (aggregate_table_query_block | aggregate_table_materilization_block);
 aggregate_table_materilization_properties: (datagroup_trigger_property);
 aggregate_table_query_properties: (dimensions_property | filters_property | measures_property | timeframes_property);
 always_filter_properties: (filters_property);
+assert_properties: (expression_property);
+column_properties: (field_property);
 conditionally_filter_properties: (filters_property | unless_property);
 dimension_group_properties: (type_view_property | sql_property | timeframes_property);
-dimension_properties: (type_view_property | sql_property | primary_key_property | timeframes_property);
+dimension_properties: (action_block  | type_view_property | sql_property | primary_key_property | timeframes_property);
 explore_properties: (access_filter_block | aggregate_table_block | always_filter_block | always_join_property | case_sensitive_property | cancel_grouping_fields_property | conditionally_filter_block | description_property | extension_property | extends_property | fields_property | final_property | from_property | group_label_property | hidden_property | join_block | label_property | link_property | persist_for_property | persist_with_property | query_block | relationship_property | required_access_grants_property | required_joins_property | sql_on_property | sql_table_name_property | symmetric_aggregates_property | tags_property | type_view_property | view_label_property | view_name_property);
+explore_source_properties: (column_block | filters_test_property);
 filter_properties: (type_view_property | sql_property);
 join_properties: (fields_property | foreign_key_property | from_property | outer_only_property | relationship_property | required_access_grants_property | required_joins_property | sql_on_property | type_join_property | view_label_property);
 measure_properties: (type_view_property | sql_property | value_format_property);
 model_properties: (derived_table | join_block);
 parameter_properties: (type_view_property | sql_property | allowed_value_property);
+test_properties: (explore_source_block | assert_block);
 query_properties: (description_property | dimension_query_property | filters_property | label_property | limit_property | measure_query_property | pivots_property | sorts_property);
-view_properties: (dimension_block | dimension_group_block | filter_block | measure_block | parameter_block | sql_table_name_property);
+view_properties: (dimension_block | dimension_group_block | extension_property | extends_property | filter_block | measure_block | parameter_block | sql_table_name_property);
 
 // Property(s)
 allowed_value_property: ALLOWED_VALUES COLON allowed_value_list;
@@ -49,25 +67,32 @@ always_join_property: ALWAYS_JOIN COLON LBRACKET identifier_list RBRACKET ;
 case_sensitive_property: CASE_SENSITIVE COLON (YES | NO);
 cancel_grouping_fields_property: CANCEL_GROUPING_FIELDS COLON LBRACKET identifier_list RBRACKET;
 datagroup_trigger_property: DATAGROUP_TRIGGER COLON IDENTIFIER;
+default_property: DEFAULT COLON QUOTED_STRING;
 description_property: DESCRIPTION COLON QUOTED_STRING;
 derived_table_property: SQL COLON QUOTED_STRING;
 dimension_query_property: DIMENSIONS COLON LBRACKET identifier_list RBRACKET ;
 dimensions_property: DIMENSIONS COLON LBRACKET identifier_list RBRACKET ;
+expression_property: EXPRESSION COLON DOLLAR LBRACE IDENTIFIER RBRACE EQ NUMBER SEMI SEMI;
 extension_property: EXTENSION COLON REQUIRED;
 extends_property: EXTENDS COLON LBRACKET identifier_list RBRACKET;
 fields_property: FIELDS COLON LBRACKET identifier_list RBRACKET;
 field_property: FIELD COLON IDENTIFIER;
 filters_property: FILTERS COLON LBRACKET string_list_key_values RBRACKET;
+filters_test_property: FILTERS COLON LBRACKET IDENTIFIER COLON QUOTED_STRING RBRACKET;
 final_property: FINAL COLON (YES | NO);
 foreign_key_property: FOREIGN_KEY COLON  IDENTIFIER;
+form_url_property: FORM_URL COLON QUOTED_STRING;
 from_property: FROM COLON  IDENTIFIER;
 group_label_property: GROUP_LABEL COLON QUOTED_STRING;
 hidden_property: HIDDEN_ COLON (YES | NO);
+icon_url_property: ICON_URL COLON QUOTED_STRING;
+include_property: INCLUDE COLON QUOTED_STRING;
 label_property: LABEL COLON QUOTED_STRING;
 limit_property: LIMIT COLON NUMBER;
 link_property: LINK COLON QUOTED_STRING;
 measure_query_property: MEASURES COLON LBRACKET identifier_list RBRACKET ;
 measures_property: MEASURES COLON LBRACKET identifier_list RBRACKET ;
+name_property: NAME COLON QUOTED_STRING;
 outer_only_property: OUTER_ONLY COLON (YES | NO);
 // TODO: Make this more detailed of a parser pattern
 persist_for_property: PERSIST_FOR COLON QUOTED_STRING;
@@ -75,6 +100,7 @@ persist_with_property: PERSIST_WITH COLON IDENTIFIER;
 primary_key_property: PRIMARY_KEY COLON YES;
 pivots_property: PIVOTS COLON LBRACKET identifier_list RBRACKET;
 relationship_property: RELATIONSHIP COLON (MANY_TO_MANY | MANY_TO_ONE | ONE_TO_ONE | ONE_TO_MANY);
+required_property: REQUIRED COLON (YES | NO);
 required_access_grants_property: REQUIRED_ACCESS_GRANTS COLON LBRACKET identifier_list RBRACKET;
 required_joins_property: REQUIRED_JOINS COLON LBRACKET identifier_list RBRACKET;
 sorts_property: SORTS COLON LBRACKET identifier_list_key_values_asc_desc RBRACKET;
@@ -87,8 +113,11 @@ timeframes_property: TIMEFRAMES COLON LBRACKET timeframe_list RBRACKET;
 // TODO: rename type property to something else
 type_join_property: TYPE COLON (INNER | CROSS | FULL_OUTER | LEFT_OUTER);
 type_view_property: TYPE COLON IDENTIFIER;
+type_action_form_param_property: TYPE COLON IDENTIFIER;
 unless_property: UNLESS COLON LBRACKET identifier_list RBRACKET ;
 user_attribute_property: USER_ATTRIBUTE COLON IDENTIFIER;
+url_property: URL COLON QUOTED_STRING;
+value_property: VALUE COLON QUOTED_STRING;
 value_format_property: VALUE_FORMAT COLON QUOTED_STRING;
 view_label_property: VIEW_LABEL COLON QUOTED_STRING;
 view_name_property: VIEW_NAME COLON IDENTIFIER;

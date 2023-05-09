@@ -15,18 +15,13 @@ test: historic_revenue_is_accurate {
     expression: ${orders.total_revenue} = 626000 ;;
   }
 }
-  # Possibly more assert declarations
-}
 ## Possibly more test declarations
 
 view: view_name_for_use {
   extension: required
   extends: [view_name_for_use, view_name_for_use]
   # https://cloud.google.com/looker/docs/reference/param-field
-  dimension : field_name {  #(dimension | dimension_group | measure | filter | parameter)
-    type: type_name
-    intervals: [interval, interval]
-    timeframes: [timeframe, timeframe]
+  dimension : dimension_name {
 
     # ACTION AND LINKING PARAMETERS
     action: {
@@ -40,13 +35,13 @@ view: view_name_for_use {
       }
       form_param: {
         name: "name string"
-        type: textarea | string | select
+        type: textarea 
         label: "possibly-localized-string"
         option: {
           name: "name string"
           label: "possibly-localized-string"
         }
-        required: yes | no
+        required: yes # yes | no
         description: "possibly-localized-string"
         default: "string"
       }
@@ -80,14 +75,8 @@ view: view_name_for_use {
     # FILTER PARAMETERS
     can_filter: yes # yes | no
     case_sensitive: no #yes | no
-    filters: [dimension: "filter expression", dimension: "filter expression"]
-    skip_drill_filter: no # yes | no
 
-    # FILTER SUGGESTION PARAMETERS
-    allowed_value: {
-      label: "desired label name"
-      value: "looker filter expression"
-    }
+    
     # Possibly more allowed_value definitions
     bypass_suggest_restrictions: yes # yes | no
     full_suggestions: no #yes | no
@@ -98,17 +87,12 @@ view: view_name_for_use {
     suggestions: ["suggestion string", "suggestion string"]
 
     # QUERY PARAMETERS
-    allow_approximate_optimization:yes # yes | no
-    approximate: no #yes | no
-    approximate_threshold: N
     convert_tz: yes #yes | no
     datatype: epoch # epoch | timestamp | datetime | date | yyyymmdd
     fanout_on: repeated_record_name
-    precision: N
     primary_key: no # yes | no
     required_access_grants: [access_grant_name, access_grant_name]
     required_fields: [field_name, field_name]
-    sql_distinct_key: SQL expression to define repeated entities ;;
 
     # VALUE AND FORMATTING PARAMETERS
     case: {
@@ -118,13 +102,9 @@ view: view_name_for_use {
       }
       # Possibly more when statements
     }
-    default_value: "desired default value"
     # TODO: REVIEW THIS LOGIC
-    direction: "row" # "row | column"
     end_location_field: dimension_name
     html: HTML expression using Liquid template elements ;;
-    list_field: dimension_name
-    percentile: Nth percentile
     sql: SQL expression to generate the field value ;;
     sql_end: SQL expression indicating the end time of a duration ;;
     sql_latitude: SQL expression to generate a latitude ;;
