@@ -50,7 +50,7 @@ assert_properties: (expression_property);
 column_properties: (field_property);
 conditionally_filter_properties: (filters_property | unless_property);
 dimension_group_properties: (type_view_property | sql_property | timeframes_property);
-dimension_properties: (bypass_suggest_restrictions_property | full_suggestions_property| suggest_dimension_property | suggest_explore_property | suggest_persist_for_property | suggestable_property | suggestions_property |   case_sensitive_property | can_filter_property |  view_label_property |style_property | order_by_field_property | hidden_property | label_property | label_from_parameter_property | group_item_label_property | group_label_property | description_property | alpha_sort_proptery | alias_property | link_block | tags_property | drill_fields_property | action_block  | type_view_property | sql_property | primary_key_property | timeframes_property);
+dimension_properties: ( required_fields_property |required_access_grants_property |  required_access_grants_property |  primary_key_property | fanout_on_property | primary_key_property | data_type_property | convert_tz_property | bypass_suggest_restrictions_property | full_suggestions_property| suggest_dimension_property | suggest_explore_property | suggest_persist_for_property | suggestable_property | suggestions_property |   case_sensitive_property | can_filter_property |  view_label_property |style_property | order_by_field_property | hidden_property | label_property | label_from_parameter_property | group_item_label_property | group_label_property | description_property | alpha_sort_proptery | alias_property | link_block | tags_property | drill_fields_property | action_block  | type_view_property | sql_property | primary_key_property | timeframes_property);
 explore_properties: (access_filter_block | aggregate_table_block | always_filter_block | always_join_property | case_sensitive_property | cancel_grouping_fields_property | conditionally_filter_block | description_property | extension_property | extends_property | fields_property | final_property | from_property | group_label_property | hidden_property | join_block | label_property | link_property | persist_for_property | persist_with_property | query_block | relationship_property | required_access_grants_property | required_joins_property | sql_on_property | sql_table_name_property | symmetric_aggregates_property | tags_property | type_view_property | view_label_property | view_name_property);
 explore_source_properties: (column_block | filters_test_property);
 filter_properties: (type_view_property | sql_property);
@@ -72,7 +72,14 @@ bypass_suggest_restrictions_property: BYPASS_SUGGEST_RESTRICTIONS COLON (YES | N
 case_sensitive_property: CASE_SENSITIVE COLON (YES | NO);
 can_filter_property: CAN_FILTER COLON (YES | NO);
 cancel_grouping_fields_property: CANCEL_GROUPING_FIELDS COLON LBRACKET identifier_list RBRACKET;
+convert_tz_property
+    : CONVERT_TZ COLON (YES | NO)
+    ;
+
 datagroup_trigger_property: DATAGROUP_TRIGGER COLON IDENTIFIER;
+data_type_property
+    : DATATYPE COLON datatype_value
+    ;
 default_property: DEFAULT COLON QUOTED_STRING;
 description_property: DESCRIPTION COLON QUOTED_STRING;
 derived_table_property: SQL COLON QUOTED_STRING;
@@ -82,6 +89,10 @@ drill_fields_property: DRILL_FIELDS COLON LBRACKET identifier_list RBRACKET;
 expression_property: EXPRESSION COLON DOLLAR LBRACE IDENTIFIER RBRACE EQ NUMBER SEMI SEMI;
 extension_property: EXTENSION COLON REQUIRED;
 extends_property: EXTENDS COLON LBRACKET identifier_list RBRACKET;
+fanout_on_property
+    : FANOUT_ON COLON IDENTIFIER
+    ;
+
 fields_property: FIELDS COLON LBRACKET identifier_list RBRACKET;
 field_property: FIELD COLON IDENTIFIER;
 filters_property: FILTERS COLON LBRACKET string_list_key_values RBRACKET;
@@ -108,11 +119,14 @@ outer_only_property: OUTER_ONLY COLON (YES | NO);
 // TODO: Make this more detailed of a parser pattern
 persist_for_property: PERSIST_FOR COLON QUOTED_STRING;
 persist_with_property: PERSIST_WITH COLON IDENTIFIER;
-primary_key_property: PRIMARY_KEY COLON YES;
+primary_key_property: PRIMARY_KEY COLON (YES | NO);
 pivots_property: PIVOTS COLON LBRACKET identifier_list RBRACKET;
 relationship_property: RELATIONSHIP COLON (MANY_TO_MANY | MANY_TO_ONE | ONE_TO_ONE | ONE_TO_MANY);
 required_property: REQUIRED COLON (YES | NO);
 required_access_grants_property: REQUIRED_ACCESS_GRANTS COLON LBRACKET identifier_list RBRACKET;
+required_fields_property
+    : REQUIRED_FIELDS COLON LBRACKET identifier_list RBRACKET
+    ;
 required_joins_property: REQUIRED_JOINS COLON LBRACKET identifier_list RBRACKET;
 sorts_property: SORTS COLON LBRACKET identifier_list_key_values_asc_desc RBRACKET;
 // TODO: Make this more detailed of a parser pattern
@@ -160,3 +174,12 @@ string_list_key_values: (string_key_value (COMMA string_key_value)*)?;
 // Allowed value and timeframe lists
 allowed_value_list: LPAREN (QUOTED_STRING (COMMA QUOTED_STRING)*)? RPAREN;
 timeframe_list: (IDENTIFIER (COMMA IDENTIFIER)*)?;
+// values
+
+datatype_value
+    : EPOCH
+    | TIMESTAMP
+    | DATETIME
+    | DATE
+    | YYYYMMDD
+    ;

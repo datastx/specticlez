@@ -15,12 +15,15 @@ BYPASS_SUGGEST_RESTRICTIONS: 'bypass_suggest_restrictions';
 CANCEL_GROUPING_FIELDS: 'cancel_grouping_fields';
 CAN_FILTER: 'can_filter';
 CASE_SENSITIVE: 'case_sensitive';
+CASE: 'case';
 COLON: ':';
 COMMA: ',';
+CONVERT_TZ: 'convert_tz';
 CONDITIONALLY_FILTER: 'conditionally_filter';
 COLUMN: 'column';
 CROSS: 'cross';
 DATAGROUP_TRIGGER: 'datagroup_trigger';
+DATATYPE : 'datatype';
 DEFAULT: 'default';
 DERIVED_TABLE: 'derived_table';
 DESC: 'desc';
@@ -91,6 +94,8 @@ RBRACKET: ']';
 RELATIONSHIP: 'relationship';
 REQUIRED: 'required';
 REQUIRED_ACCESS_GRANTS: 'required_access_grants';
+REQUIRED_FIELDS : 'required_fields';
+
 REQUIRED_JOINS: 'required_joins';
 RPAREN: ')';
 
@@ -124,6 +129,15 @@ VIEW: 'view';
 VIEW_LABEL: 'view_label';
 VIEW_NAME: 'view_name';
 YES: 'yes';
+WHEN: 'when';
+
+EPOCH : 'epoch';
+TIMESTAMP : 'timestamp';
+DATETIME : 'datetime';
+DATE : 'date';
+YYYYMMDD : 'yyyymmdd';
+FANOUT_ON : 'fanout_on';
+
 
 // Dynamic fields
 COMMENT: '#' .*? '\r'? '\n' -> skip;

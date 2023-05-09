@@ -557,12 +557,30 @@ class LookMLParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LookMLParser#convert_tz_property.
+    def enterConvert_tz_property(self, ctx:LookMLParser.Convert_tz_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#convert_tz_property.
+    def exitConvert_tz_property(self, ctx:LookMLParser.Convert_tz_propertyContext):
+        pass
+
+
     # Enter a parse tree produced by LookMLParser#datagroup_trigger_property.
     def enterDatagroup_trigger_property(self, ctx:LookMLParser.Datagroup_trigger_propertyContext):
         pass
 
     # Exit a parse tree produced by LookMLParser#datagroup_trigger_property.
     def exitDatagroup_trigger_property(self, ctx:LookMLParser.Datagroup_trigger_propertyContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#data_type_property.
+    def enterData_type_property(self, ctx:LookMLParser.Data_type_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#data_type_property.
+    def exitData_type_property(self, ctx:LookMLParser.Data_type_propertyContext):
         pass
 
 
@@ -644,6 +662,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#extends_property.
     def exitExtends_property(self, ctx:LookMLParser.Extends_propertyContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#fanout_on_property.
+    def enterFanout_on_property(self, ctx:LookMLParser.Fanout_on_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#fanout_on_property.
+    def exitFanout_on_property(self, ctx:LookMLParser.Fanout_on_propertyContext):
         pass
 
 
@@ -914,6 +941,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#required_access_grants_property.
     def exitRequired_access_grants_property(self, ctx:LookMLParser.Required_access_grants_propertyContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#required_fields_property.
+    def enterRequired_fields_property(self, ctx:LookMLParser.Required_fields_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#required_fields_property.
+    def exitRequired_fields_property(self, ctx:LookMLParser.Required_fields_propertyContext):
         pass
 
 
@@ -1229,6 +1265,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#timeframe_list.
     def exitTimeframe_list(self, ctx:LookMLParser.Timeframe_listContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#datatype_value.
+    def enterDatatype_value(self, ctx:LookMLParser.Datatype_valueContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#datatype_value.
+    def exitDatatype_value(self, ctx:LookMLParser.Datatype_valueContext):
         pass
 
 
