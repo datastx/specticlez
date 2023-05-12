@@ -97,10 +97,14 @@ view: view_name_for_use {
     # VALUE AND FORMATTING PARAMETERS
     case: {
       when: {
-        sql: SQL condition ;;
-        label: "value"
+        sql: ${TABLE}.status = 0 ;;
+        label: "incomplete"
       }
-      # Possibly more when statements
+      when: {
+        sql: ${TABLE}.status = 1 ;;
+        label: "complete"
+      }
+      else: "unknown"
     }
     # TODO: REVIEW THIS LOGIC
     end_location_field: dimension_name

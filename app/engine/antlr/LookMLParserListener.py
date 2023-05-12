@@ -152,6 +152,15 @@ class LookMLParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LookMLParser#case_block.
+    def enterCase_block(self, ctx:LookMLParser.Case_blockContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#case_block.
+    def exitCase_block(self, ctx:LookMLParser.Case_blockContext):
+        pass
+
+
     # Enter a parse tree produced by LookMLParser#column_block.
     def enterColumn_block(self, ctx:LookMLParser.Column_blockContext):
         pass
@@ -251,6 +260,15 @@ class LookMLParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LookMLParser#when_block.
+    def enterWhen_block(self, ctx:LookMLParser.When_blockContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#when_block.
+    def exitWhen_block(self, ctx:LookMLParser.When_blockContext):
+        pass
+
+
     # Enter a parse tree produced by LookMLParser#access_filter_properties.
     def enterAccess_filter_properties(self, ctx:LookMLParser.Access_filter_propertiesContext):
         pass
@@ -347,6 +365,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#assert_properties.
     def exitAssert_properties(self, ctx:LookMLParser.Assert_propertiesContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#case_properties.
+    def enterCase_properties(self, ctx:LookMLParser.Case_propertiesContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#case_properties.
+    def exitCase_properties(self, ctx:LookMLParser.Case_propertiesContext):
         pass
 
 
@@ -482,6 +509,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#view_properties.
     def exitView_properties(self, ctx:LookMLParser.View_propertiesContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#when_properties.
+    def enterWhen_properties(self, ctx:LookMLParser.When_propertiesContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#when_properties.
+    def exitWhen_properties(self, ctx:LookMLParser.When_propertiesContext):
         pass
 
 
@@ -638,6 +674,24 @@ class LookMLParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LookMLParser#else_property.
+    def enterElse_property(self, ctx:LookMLParser.Else_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#else_property.
+    def exitElse_property(self, ctx:LookMLParser.Else_propertyContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#end_location_field_property.
+    def enterEnd_location_field_property(self, ctx:LookMLParser.End_location_field_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#end_location_field_property.
+    def exitEnd_location_field_property(self, ctx:LookMLParser.End_location_field_propertyContext):
+        pass
+
+
     # Enter a parse tree produced by LookMLParser#expression_property.
     def enterExpression_property(self, ctx:LookMLParser.Expression_propertyContext):
         pass
@@ -779,6 +833,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#hidden_property.
     def exitHidden_property(self, ctx:LookMLParser.Hidden_propertyContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#html_property.
+    def enterHtml_property(self, ctx:LookMLParser.Html_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#html_property.
+    def exitHtml_property(self, ctx:LookMLParser.Html_propertyContext):
         pass
 
 
@@ -986,6 +1049,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#sql_property.
     def exitSql_property(self, ctx:LookMLParser.Sql_propertyContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#sql_case_property.
+    def enterSql_case_property(self, ctx:LookMLParser.Sql_case_propertyContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#sql_case_property.
+    def exitSql_case_property(self, ctx:LookMLParser.Sql_case_propertyContext):
         pass
 
 
@@ -1265,6 +1337,15 @@ class LookMLParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by LookMLParser#timeframe_list.
     def exitTimeframe_list(self, ctx:LookMLParser.Timeframe_listContext):
+        pass
+
+
+    # Enter a parse tree produced by LookMLParser#unlimited_identifiers.
+    def enterUnlimited_identifiers(self, ctx:LookMLParser.Unlimited_identifiersContext):
+        pass
+
+    # Exit a parse tree produced by LookMLParser#unlimited_identifiers.
+    def exitUnlimited_identifiers(self, ctx:LookMLParser.Unlimited_identifiersContext):
         pass
 
 
