@@ -111,7 +111,7 @@ full_suggestions_property: FULL_SUGESTIONS COLON (YES | NO);
 group_item_label_property: GROUP_ITEM_LABEL COLON QUOTED_STRING;
 group_label_property: GROUP_LABEL COLON QUOTED_STRING;
 hidden_property: HIDDEN_ COLON (YES | NO);
-html_property: HTML COLON unlimited_identifiers SEMI SEMI;
+html_property: HTML COLON  SEMI SEMI ;
 icon_url_property: ICON_URL COLON QUOTED_STRING;
 include_property: INCLUDE COLON QUOTED_STRING;
 label_property: LABEL COLON QUOTED_STRING;

@@ -154,6 +154,8 @@ FANOUT_ON : 'fanout_on';
 // Dynamic fields
 COMMENT: '#' .*? '\r'? '\n' -> skip;
 IDENTIFIER: [a-zA-Z_] [a-zA-Z_0-9-.]*; 
+
+
 NUMBER: [0-9]+ ('.' [0-9]+)?;
 QUOTED_STRING: '"' (~["\r\n\t])* '"';
 WS: [ \t\r\n]+ -> skip;
